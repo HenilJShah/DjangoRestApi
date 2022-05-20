@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import createStudent
+from .views import CrudStudent
 
 urlpatterns = [
-    path('create/', createStudent),   
+    path('db/', CrudStudent),   
 ]
