@@ -40,7 +40,7 @@ def CrudStudent(request):
         delete_id = io.BytesIO(request.body)
         id = JSONParser().parse(delete_id).get('id')
         Student.objects.get(id=id).delete()
-        JSONRenderer().render({"msg":"delete data"})
+        return JsonResponse({"msg":"delete data"}, safe=False)
     
 
     # create data
