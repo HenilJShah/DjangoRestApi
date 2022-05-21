@@ -18,17 +18,42 @@ def CrudStudent(request):
         pythondata = JSONParser().parse(bdata)
         id = pythondata.get('id')
         if id is not None:
-            studata = Student.objects.get(id = id)
+            studata = Student.objects.get(id=id)
             serializer = StudentSerializers(studata)
             return JsonResponse(serializer.data)
+
+
+    # update
+    if request.method == "PUT":
+        bodydata = request.body
+        bdata = io.BytesIO(bodydata)
+        python_data = JSONParser().parse(bdata)
+        stuid = python_data.get('id')
+        qrydata = Student.objects.get(id = stuid)
+        serialize = StudentSerializers(qrydata, data=python_data, partial=True)
+        if serialize.is_valid():
+            serialize.save()
+        else:
+            print("error==>", serialize.errors)
+
+    if request.method == "DELETE":
+        delete_id = io.BytesIO(request.body)
+        id = JSONParser().parse(delete_id).get('id')
+        Student.objects.get(id=id).delete()
+        JSONRenderer().render({"msg":"delete data"})
+    
 
     # create data
     if request.method == "POST":
         bodydata = request.body
-        serialize = StudentSerializers(data = JSONParser().parse(io.BytesIO(bodydata)))
+        serialize = StudentSerializers(
+            data=JSONParser().parse(io.BytesIO(bodydata)))
         if serialize.is_valid():
             serialize.save()
-            return JsonResponse({'msg':"data save"})
+            return JsonResponse({'msg': "data save"})
+        else:
+            print(serialize.errors)
+            return JSONRenderer().render({'msg': serialize.errors})
     data = Student.objects.all()
     studata = StudentSerializers(data, many=True)
     return HttpResponse(JSONRenderer().render(studata.data), content_type='application/json')
