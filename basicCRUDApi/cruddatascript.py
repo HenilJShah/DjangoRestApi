@@ -18,6 +18,7 @@ class StudentData():
         req = requests.post(url=self.URL, data=json_data)
         return req.json()
 
+    # update
     def studentDataUpdate(self, id):
         data = {
             "id": id,

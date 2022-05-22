@@ -22,5 +22,5 @@ urlpatterns = [
     path('create/', include('DeSerializationApi.urls')),
     path('crud/', include('basicCRUDApi.urls')),
     path('val/', include('ValidationApi.urls')),
-    path('model/', include('modelsSerializerApi.urls')),
+    path('models/', include('modelsSerializerApi.urls')),
 ]
