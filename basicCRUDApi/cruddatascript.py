@@ -76,6 +76,4 @@ if __name__ == "__main__":
             clobj.studentDataUpdate(fetch_id_number)
         elif choic == 4:
             fetch_id_number = int(input("enter id to delete recode:"))
-            clobj.studentDataDelete(fetch_id_number)
-        else:
-            print("invalid")
+            clobj.studentDataDelete(fetch_id_number)      

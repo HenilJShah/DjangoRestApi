@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'SerializertionApi',
     'DeSerializationApi',
-    'basicCRUDApi'
+    'basicCRUDApi',
+    'ValidationApi',
 ]
 
 MIDDLEWARE = [
