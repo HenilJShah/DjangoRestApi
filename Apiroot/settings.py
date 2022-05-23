@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'basicCRUDApi',
     'ValidationApi',
     'modelsSerializerApi',
+    'FunctionBasedViewAPi',
 ]
 
 MIDDLEWARE = [
