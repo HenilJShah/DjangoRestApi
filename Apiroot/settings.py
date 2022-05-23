@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'ValidationApi',
     'modelsSerializerApi',
     'FunctionBasedViewAPi',
+    'ClassBasedViewAPi',
 ]
 
 MIDDLEWARE = [

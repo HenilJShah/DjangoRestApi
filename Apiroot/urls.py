@@ -24,4 +24,5 @@ urlpatterns = [
     path('val/', include('ValidationApi.urls')),
     path('models/', include('modelsSerializerApi.urls')),
     path('func/', include('FunctionBasedViewAPi.urls')),
+    path('cls/', include('ClassBasedViewAPi.urls')),
 ]
