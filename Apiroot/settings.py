@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'modelsSerializerApi',
     'FunctionBasedViewAPi',
     'ClassBasedViewAPi',
+    'GenericViewApi',
 ]
 
 MIDDLEWARE = [
