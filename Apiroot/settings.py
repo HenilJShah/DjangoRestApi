@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'ClassBasedViewAPi',
     'GenericViewApi',
     'corsheaders',
+    'ConcreteViewApi',
 ]
 
 MIDDLEWARE = [
