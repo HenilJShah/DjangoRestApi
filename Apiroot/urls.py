@@ -27,4 +27,7 @@ urlpatterns = [
     path('cls/', include('ClassBasedViewAPi.urls')),
     path('gen/', include('GenericViewApi.urls')),
     path('cv/', include('ConcreteViewApi.urls')),
+    path('vs/', include('ViewSetApi.urls')),
+    path('fa/', include('filteringApp.urls')),
+    path('pa/', include('paginationApp.urls')),
 ]
