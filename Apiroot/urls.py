@@ -30,4 +30,6 @@ urlpatterns = [
     path('vs/', include('ViewSetApi.urls')),
     path('fa/', include('filteringApp.urls')),
     path('pa/', include('paginationApp.urls')),
+    path('sr/', include('SerializerRelationsApi.urls')),
+    path('ns/', include('NestedSerializerApi.urls')),
 ]
